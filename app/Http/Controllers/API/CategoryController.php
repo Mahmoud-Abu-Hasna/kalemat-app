@@ -14,7 +14,7 @@ class CategoryController extends MainController
 {
     //
     public function index(){
-
+// get all categories api
         $categories = Category::query()->where('show',1)->get();
         $items =  CategoryCollection::collection($categories);
         return $this->customResponse(200,'true','Categories Back!',$items);
